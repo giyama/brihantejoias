@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <!-- <link rel="icon" href="img/favicon.ico"> -->
+
+        <title>Brilhante Jóias</title>
+
+        <!-- Bootstrap core CSS -->
+        <link href="css/bootstrap.css" rel="stylesheet">
+
+        <!-- Custom styles for this template -->
+        <link href="css/ionicons.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
+
+        <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+        <script src="js/ie10-viewport-bug-workaround.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="css/slick.css">
+        <link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+
+        <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!--[if lt IE 9]>
+          <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+          <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]-->
+    </head>
+
+    <body style="background:#b9b9af;">
+        <!-- Large modal -->
+        <a href="" class="modal-tamanho text-center" data-toggle="modal" data-target=".bs-example-modal-lg">
+            <h1>Não sabe o tamanho?</h1>
+        </a>
+
+        <select name="options[27]" id="select_27" class=" product-custom-option form-control" title="" onchange="opConfig.reloadPrice()">
+            <option value="">Selecione...</option>
+            <option value="241" price="0">10 </option>
+            <option value="242" price="0">11 </option>
+            <option value="243" price="0">12 </option>
+            <option value="244" price="0">13 </option>
+            <option value="245" price="0">14 </option>
+            <option value="246" price="0">15 </option>
+            <option value="247" price="0">16 </option>
+            <option value="248" price="0">17 </option>
+            <option value="249" price="0">18 </option>
+            <option value="250" price="0">19 </option>
+            <option value="251" price="0">20 </option>
+            <option value="252" price="0">21 </option>
+            <option value="253" price="0">22 </option>
+            <option value="254" price="0">23 </option>
+            <option value="255" price="0">24 </option>
+            <option value="256" price="0">25 </option>
+            <option value="257" price="0">26 </option>
+            <option value="258" price="0">27 </option>
+            <option value="259" price="0">28 </option>
+            <option value="260" price="0">29 </option>
+            <option value="261" price="0">30 </option>
+        </select>
+
+        <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content" style="background-image: url(img/background_modal.jpg); background-position: right bottom, left top; background-repeat: no-repeat, repeat;">
+                    <div class="container-fluid">
+                        <button type="button" class="close modal-anel-close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="text-center" id="gridSystemModalLabel">
+                            <img src="img/brilhante_logo.png">
+                        </h4>
+                        <p class="modal-p-anel">
+                            Se você não sabe o tamanho do seu anel, não tem problema. Nós auxiliamos você nessa etapa.<br>
+                            É simples!<br>
+                            Posicione seu anel no molde, selecione o tamanho desejado, clique no botão "Escolher" e pronto!
+                        </p>
+                    </div>
+                    <div class="container-fluid">
+                        <section class="regular slider">
+                            <div>
+                                <a href="" class="size-class" value="241" size="10">
+                                    <img src="img/ring1.jpg">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="" class="size-class" value="242" size="11">
+                                    <img src="img/ring2.png">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="" class="size-class" value="243" size="12">
+                                    <img src="img/ring3.jpg">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="" class="size-class" value="244" size="13">
+                                    <img src="img/ring4.jpg">
+                                </a>
+                            </div>
+                            <div>
+                                <a href="" class="size-class" value="245" size="14">
+                                    <img src="img/ring5.jpg">
+                                </a>
+                            </div>
+                        </section>
+                    </div>
+
+                    <input type="hidden" id="size-input">
+
+                    <div class="container-fluid text-center" style="padding: 30px 0 41px;">
+                        <div class="text-center">
+                            <a href="#" class="btn hvr-fade size-btn">Escolher</a><span class="spinner">&nbsp;</span>
+                        </div>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+        </div><!-- /.modal -->
+
+
+        <!-- Bootstrap core JavaScript
+        ================================================== -->
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/slick.js" type="text/javascript" charset="utf-8"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/retina-1.1.0.js"></script>
+
+        <script type="text/javascript">
+            $(document).ready(function () {
+
+                $(".modal-tamanho").click(function () {
+                    $("#slick-slide00").trigger("click");
+                });
+
+                $('.size-class').click(function (e) {
+                    e.preventDefault();
+
+                    var value = $(this).attr('value');
+
+                    $('.size-class').removeClass('size-selected');
+                    $(this).addClass('size-selected');
+
+                    $('#size-input').val(value);
+                });
+
+                $('.size-btn').click(function () {
+                    var size = $('#size-input').val();
+
+                    $('.spinner').css('display', 'inline-block');
+                    
+                    setTimeout(function(){ $('#select_27').val(size); }, 1000);
+                    setTimeout(function(){ $('.modal').modal('hide'); }, 1100);
+                    setTimeout(function(){ $('.spinner').css('display', 'none'); }, 1200);
+                });
+
+                $('.regular').slick({
+                    centerPadding: '100px',
+                    slidesToShow: 3,
+                    dots: true,
+                    infinite: true,
+                    slidesToScroll: 3,
+                    responsive: [
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                arrows: false,
+                                centerPadding: '40px',
+                                slidesToShow: 3
+                            }
+                        },
+                        {
+                            breakpoint: 480,
+                            settings: {
+                                arrows: false,
+                                centerPadding: '40px',
+                                slidesToShow: 1
+                            }
+                        }
+                    ]
+                });
+            });
+        </script>
+    </body>
+</html>
